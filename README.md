@@ -22,20 +22,6 @@ cd ~/.dotfiles
 4. Restart your terminal
 
 
-## Structure 📁
-
-.dotfiles/
-├── bash/
-│   └── .bashrc
-├── git/
-│   └── .gitconfig
-├── vim/
-│   └── .vimrc
-├── zsh/
-│   └── .zshrc
-└── install.sh
-
-
 ## Components 🧩
 - bash: Shell configuration
 - git: Git configuration and aliases
