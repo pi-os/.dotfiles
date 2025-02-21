@@ -1,20 +1,47 @@
-#!/bin/bash
+# .dotfiles 🚀
+Personal dotfiles configuration for development environment setup.
 
-DOTFILES="$HOME/.dotfiles"
+## Prerequisites ⚙️
 
-# Create backup directory
-mkdir -p "$DOTFILES/backup"
+- Git
+- Bash/Zsh shell
 
-# Backup existing dotfiles
-[ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$DOTFILES/backup/"
-[ -f "$HOME/.gitconfig" ] && mv "$HOME/.gitconfig" "$DOTFILES/backup/"
-[ -f "$HOME/.vimrc" ] && mv "$HOME/.vimrc" "$DOTFILES/backup/"
-[ -f "$HOME/.zshrc" ] && mv "$HOME/.zshrc" "$DOTFILES/backup/"
+## Quick Install 🔥
 
-# Create symbolic links
-ln -sf "$DOTFILES/bash/.bashrc" "$HOME/.bashrc"
-ln -sf "$DOTFILES/git/.gitconfig" "$HOME/.gitconfig"
-ln -sf "$DOTFILES/vim/.vimrc" "$HOME/.vimrc"
-ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 
-echo "✨ Dotfiles installation complete!"
+git clone https://github.com/yourusername/.dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./install.sh
+
+
+## Setup 🛠️
+
+1. Ensure you have git installed
+2. Clone the repository
+3. Run the installation script
+4. Restart your terminal
+
+
+## Structure 📁
+
+.dotfiles/
+├── bash/
+│   └── .bashrc
+├── git/
+│   └── .gitconfig
+├── vim/
+│   └── .vimrc
+├── zsh/
+│   └── .zshrc
+└── install.sh
+
+
+## Components 🧩
+- bash: Shell configuration
+- git: Git configuration and aliases
+- vim: Vim editor settings
+- zsh: Zsh shell configuration
+
+### Kinesis Advantage 360 ⌨️
+* Will there be a travel case?
+* Will there be blank key caps?
