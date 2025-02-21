@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-addToPathFront /home/theprimeagen/n/bin
+addToPathFront /home/pi-os/n/bin
 addToPathFront $DENO_INSTALL
-addToPath /home/theprimeagen/personal/lua-language-server/bin/Linux
+addToPath /home/pi-os/personal/lua-language-server/bin/Linux
 addToPath /usr/local/go/bin
 addToPath $GOPATH/bin
 addToPath $HOME/work/wrapper
