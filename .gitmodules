@@ -1,6 +1,6 @@
 [submodule "personal"]
 	path = personal
-	url = git@github.com:pi-os/.dotfiles-personal.git
+	url = git@github.com:pi-os/.dotfiles-imac.git
 [submodule "tree-sitter/.config/tree-sitter/tree-sitter-lua"]
 	path = tree-sitter/.config/tree-sitter/tree-sitter-lua
 	url = git@github.com:Azganoth/tree-sitter-lua.git

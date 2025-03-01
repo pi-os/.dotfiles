@@ -1,0 +1,1 @@
+/Users/ksoft/.dotfiles/zsh/.zshrc

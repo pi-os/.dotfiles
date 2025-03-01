@@ -1,20 +1,24 @@
 #!/bin/bash
 
 DOTFILES="$HOME/.dotfiles"
+STOW_FOLDERS="zsh nvim tmux vim-2022 i3 awesomewm"
 
 # Create backup directory
 mkdir -p "$DOTFILES/backup"
 
-# Backup existing dotfiles
-[ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$DOTFILES/backup/"
-[ -f "$HOME/.gitconfig" ] && mv "$HOME/.gitconfig" "$DOTFILES/backup/"
-[ -f "$HOME/.vimrc" ] && mv "$HOME/.vimrc" "$DOTFILES/backup/"
-[ -f "$HOME/.zshrc" ] && mv "$HOME/.zshrc" "$DOTFILES/backup/"
+# Backup existing dotfiles that might conflict
+for config in .zshrc .config/nvim .tmux.conf .vimrc .config/i3 .config/awesome; do
+[ -e "$HOME/$config" ] && mv "$HOME/$config" "$DOTFILES/backup/"
+done
 
-# Create symbolic links
-ln -sf "$DOTFILES/bash/.bashrc" "$HOME/.bashrc"
-ln -sf "$DOTFILES/git/.gitconfig" "$HOME/.gitconfig"
-ln -sf "$DOTFILES/vim/.vimrc" "$HOME/.vimrc"
-ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
+# Change to dotfiles directory
+cd "$DOTFILES"
+
+# Use stow to create symbolic links for each package
+for folder in $STOW_FOLDERS; do
+echo "Stowing $folder"
+stow -D "$folder" # Remove any existing links
+stow "$folder"    # Create new links
+done
 
 echo "✨ Dotfiles installation complete!"

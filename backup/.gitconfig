@@ -1,0 +1,14 @@
+[http]
+	postBuffer = 524288000
+	lowSpeedLimit = 1000
+	lowSpeedTime = 300
+[user]
+	name = Md Sulaiman
+	email = dev.sulaiman@icloud.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
